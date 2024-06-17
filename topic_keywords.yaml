@@ -1,0 +1,71 @@
+climate:
+  - climate change
+  - global warming
+  - greenhouse gas
+  - carbon emissions
+  - renewable energy
+  - ...
+
+economy:
+  - economic growth
+  - fiscal policy
+  - inflation
+  - unemployment
+  - trade deficit
+  - ...
+
+education:
+  - school
+  - university
+  - student loans
+  - teacher salaries
+  - curriculum
+  - ...
+
+health:
+  - healthcare
+  - medicare
+  - medicaid
+  - health insurance
+  - prescription drugs
+  - ...
+
+infrastructure:
+  - roads
+  - bridges
+  - public transportation
+  - water systems
+  - power grid
+  - ...
+
+science:
+  - research
+  - scientific funding
+  - space exploration
+  - climate science
+  - biomedical research
+  - ...
+
+social_causes:
+  - racial equality
+  - gender equality
+  - lgbtq rights
+  - immigration reform
+  - gun control
+  - ...
+
+politics_ideology:
+  - liberalism
+  - conservatism
+  - socialism
+  - capitalism
+  - democracy
+  - ...
+
+technology_entrepreneurship:
+  - startup
+  - innovation
+  - silicon valley
+  - tech industry
+  - venture capital
+  - ...
