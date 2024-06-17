@@ -1,10 +1,62 @@
+defence:
+  - defence
+  - military
+  - armed forces
+  - navy
+  - army
+  - air force
+  - strategic command
+  - stratcom
+  - security
+  - national security
+  - defence spending
+  - defence budget
+  - personnel
+  - veterans
+  - veteran
+  - reserves
+  - reservists
+  - defence policy
+  - military strategy
+  - defence capabilities
+  - military equipment
+  - weapons systems
+  - defence industry
+  - alliance
+  - alliances
+  - NATO
+  - drones
+  - drone
+  - cyber
+  - intelligence
+  - defence procurement
+  - defence contracts
+  - war
+  - warfight
+  - Joint Expeditionary Force
+  - AUKUS
+  - allies
+  - ally
+  - adversary
+  - Ukraine
+  - conflict
+  - deployment
+  - conscription
+  - deter
+  - deterrence
+
 climate:
   - climate change
   - global warming
   - greenhouse gas
   - carbon emissions
   - renewable energy
-  - ...
+  - sustainable development
+  - environment
+  - clean
+  - carbon
+  - climate
+  - emissions
 
 economy:
   - economic growth
@@ -12,15 +64,36 @@ economy:
   - inflation
   - unemployment
   - trade deficit
-  - ...
+  - economic development
+  - financial
+  - markets
+  - monetary
+  - stimulus
+  - economic recovery
+  - job creation
+  - inequality
+  - income
+  - poverty
+  - trade
+  - economic
+  - economy
+  - investment
 
 education:
   - school
   - university
+  - universtities
+  - college
   - student loans
   - teacher salaries
   - curriculum
-  - ...
+  - educational reforms
+  - higher education
+  - vocational training
+  - education
+  - child
+  - teacher training
+  - literacy
 
 health:
   - healthcare
@@ -28,7 +101,11 @@ health:
   - medicaid
   - health insurance
   - prescription drugs
-  - ...
+  - public health\
+  - mental health
+  - health
+  - disease
+  - covid
 
 infrastructure:
   - roads
@@ -36,7 +113,11 @@ infrastructure:
   - public transportation
   - water systems
   - power grid
-  - ...
+  - infrastructure
+  - transport
+  - energy
+  - resilience
+  - critical national
 
 science:
   - research
@@ -44,15 +125,27 @@ science:
   - space exploration
   - climate science
   - biomedical research
-  - ...
+  - scientific
+  - technology
+  - research and development
+  - space
+  - satellite
+  - quantum
 
 social_causes:
   - racial equality
   - gender equality
   - lgbtq rights
-  - immigration reform
-  - gun control
-  - ...
+  - immigration
+  - social justice
+  - human rights
+  - social
+  - inclusion
+  - diversity and inclusion
+  - woke
+  - social mobility
+  - welfare
+  - equity
 
 politics_ideology:
   - liberalism
@@ -60,7 +153,13 @@ politics_ideology:
   - socialism
   - capitalism
   - democracy
-  - ...
+  - diplomacy
+  - political
+  - voter
+  - election
+  - government
+  - power
+  - ideology
 
 technology_entrepreneurship:
   - startup
@@ -68,4 +167,10 @@ technology_entrepreneurship:
   - silicon valley
   - tech industry
   - venture capital
-  - ...
+  - innovation
+  - digital transformation
+  - artificial intelligence
+  - e-commerce
+  - technology
+  - big tech
+  - tech companies

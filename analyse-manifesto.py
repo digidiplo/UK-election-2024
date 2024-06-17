@@ -1,12 +1,9 @@
-# Install required libraries if you haven't already
-# !pip install pandas numpy matplotlib seaborn plotly nltk spacy
-# !pip install dash dash-bootstrap-components
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+import yaml
 import dash
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
@@ -16,12 +13,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
 import nltk
 import spacy
-from typing import List
+from typing import List, Dict
 import string
 
 from wordcloud import WordCloud
 import os
-
 
 # Download NLTK data if necessary
 nltk.download('punkt')
@@ -162,6 +158,32 @@ def get_word_cloud(
         # save the image
         plt.savefig(os.path.join(image_path, image_name), bbox_inches="tight")
 
+
+def get_topical_sentences(
+    sentences: List[str], topics: Dict[str, List[str]]
+) -> Dict[str, List[str]]:
+    """
+    Get lists of sentences per topic, based on the presence of
+    words that are a part of the topic.
+    Args:
+        sentences (List[str]):
+            List of sentences to analyse.
+        topics (Dict[str, List[str]]):
+            Dictionary of words per topic.
+    Returns:
+        Dict[str, List[str]]:
+            Dictionary of sentences per topic.
+    """
+    topical_sentences = dict()
+    for topic in topics:
+        topical_sentences[topic] = list()
+    for sentence in sentences:
+        for topic in topics:
+            if any(topical_word in sentence.lower() for topical_word in topics[topic]):
+                topical_sentences[topic].append(sentence)
+    return topical_sentences
+
+
 # Directory containing the manifesto .md files
 manifesto_dir = "manifestos"
 
@@ -215,30 +237,44 @@ for c in range(len(data.columns)):
   #  print('---')
 
 # Generate word cloud for a specific document
-document_name = 'Greens'  # Replace with the desired document name
+# document_name = 'Greens'  # Replace with the desired document name
 
 # Define the black color function
-def black_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
-    return "hsl(0,100%, 1%)"
+# def black_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+  #  return "hsl(0,100%, 1%)"
 
 # Generate the word cloud with customized settings
-wordcloud = WordCloud(font_path='/Library/Fonts/Arial Unicode.ttf',
-                      background_color="white",
-                      width=3000, height=2000,
-                      max_words=500).generate_from_frequencies(data[document_name])
+# wordcloud = WordCloud(font_path='/Library/Fonts/Arial Unicode.ttf',
+                    #  background_color="white",
+                    #  width=3000, height=2000,
+                    #  max_words=500).generate_from_frequencies(data[document_name])
 
 # Set the word color to black
-wordcloud.recolor(color_func=black_color_func)
+# wordcloud.recolor(color_func=black_color_func)
 
 # Plot the word cloud
-plt.figure(figsize=(15, 10))
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis('off')
-plt.title(f'Word Cloud for {document_name}')
+# plt.figure(figsize=(15, 10))
+# plt.imshow(wordcloud, interpolation='bilinear')
+# plt.axis('off')
+# plt.title(f'Word Cloud for {document_name}')
+# plt.savefig(f'{document_name}_wc.png') # Save the image
+# plt.show()
 
-# Save the image
-plt.savefig(f'{document_name}_wc.png')
+with open('topic_keywords.yaml', 'r') as file:
+    topic_keywords = yaml.safe_load(file)
 
-plt.show()
+with open('manifestos/Labour.md', 'r') as file:
+    text = file.read()
 
+# Get the sentences from the text
+sentences = get_sentences(text)
 
+# Get the topical sentences
+topical_sentences = get_topical_sentences(sentences, topic_keywords)
+
+# Print the topical sentences for each topic
+for topic, sentences in topical_sentences.items():
+    print(f"Topic: {topic}")
+    for sentence in sentences:
+        print(f"- {sentence}")
+    print()
